@@ -5,7 +5,7 @@
 ## Introduction
 We present a neural optimization model trained with reinforcement learning to solve the coordinate ordering problem for sets of star glyphs. Given a set of star glyphs associated to multiple class labels, we propose to use shape context descriptors to measure the perceptual distance between pairs of glyphs, and use the derived silhouette coefficient to measure the perception of class separability within the entire set. To find the optimal coordinate order for the given set, we train a neural network using reinforcement learning to reward orderings with high silhouette coefficients.
 
-For more details and materials, please refer to our [project](https://#) page.
+<!-- For more details and materials, please refer to our [project](https://#) page. -->
 <div align=center>
 <img src="./docs/network.png" width="50%">
 </div>
