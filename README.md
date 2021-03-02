@@ -40,6 +40,7 @@ pip install -r requirements.txt
 ./scripts/test.sh
 ```
 ### Just generate data
+Notice that, training and testing procedures will generate data automaticly.
 ```
 ./scripts/generate.sh
 ```
