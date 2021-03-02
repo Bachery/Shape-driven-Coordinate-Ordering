@@ -49,7 +49,7 @@ We provide a script to generate the Fig.7 in our paper:
 cd shape_task
 ./scripts/curve.sh
 ```
-For more details of the shape task, please refer to [README](./shape_task/README.md).
+For more details about the shape task, please refer to [README](./shape_task/README.md).
 
 ## File structure:
 
