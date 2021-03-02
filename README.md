@@ -48,7 +48,6 @@ All codes are tested under PyTorch 1.1.0 and Python 3.7 on Ubuntu 18.04.
 * **scripts/**: Some scripts to train/test network.
 ---
 * **tools.py**: Consists of 2 parts: evaluation functions and painting functions.
-* **generate.py**: Use to generate training/testing data.
 * **model.py**: Define the network structure.
 * **vis.py**: Laod/generate training/testing data, update mask in network.
 * **train.py**: Main code to run the network, we set some parameters to contorll the training.
