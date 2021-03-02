@@ -1,0 +1,23 @@
+# data
+data/star/*
+data/radviz/*
+datasets/*
+shape_task/data/*
+
+# results
+vis/star/*
+vis/radviz/*
+vis_valid/star/*
+vis_valid/radviz/*
+shape_task/shape/*
+!shape_task/shape/24d-fcn2
+
+# charts
+shape_task/compare/curve/*
+compare/curve/*
+compare/table/*
+shape_task/compare/curve/*
+
+# others
+__pycache__
+*.pyc
