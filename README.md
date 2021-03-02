@@ -58,7 +58,7 @@ All codes are tested under PyTorch 1.1.0 and Python 3.7 on Ubuntu 18.04.
     --just_test: bool, True when test the network without training
     --just_generate: bool, True when only generate data
     --note: string, any words you want to say
-        When the train.py is running, it will create a folder under pack/ to store the result, and the note string will be a part of the folder's name
+        when the train.py is running, it will create a folder to store the result, and the note string will be a part of the folder's name
     --use_cuda: bool, use CUDA to run network
         True
         False
