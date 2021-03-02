@@ -143,7 +143,7 @@ plt.legend()
 # xticks = [ i-star_dim for i in range(star_dim, end_dim+1, 2) ]
 # xlabels = [ str(i) for i in range(star_dim, end_dim+1, 2) ]
 # plt.axvline(x=16-star_dim, alpha=0.75, lw=1, linestyle='--', c='k')
-
+ 
 xticks = [ i-star_dim for i in range(star_dim, end_dim+1, 1) ]
 xlabels = [ str(i) for i in range(star_dim, end_dim+1, 1) ]
 plt.axvline(x=24-star_dim, alpha=0.75, lw=1, linestyle='--', c='k')

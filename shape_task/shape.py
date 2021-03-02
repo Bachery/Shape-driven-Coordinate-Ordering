@@ -142,7 +142,7 @@ class MixShapeDataset(Dataset):
         return (self.data[self.data_id][idx], self.points[self.data_id][idx], self.gt[self.data_id][idx])
 
 
-def create_dataset( dim_num, train_size, valid_size, sample_num, standard=0.1, seed=None ):
+def create_dataset( dim_num, train_size, valid_size, sample_num, standard=0.1, seed=None):
     dim_num = int(dim_num)
     if seed is None:
         seed = np.random.randint(123456789)
@@ -162,9 +162,9 @@ def create_dataset( dim_num, train_size, valid_size, sample_num, standard=0.1, s
         return train_dir, valid_dir
     
     if not os.path.exists(train_dir):
-        os.makedirs(train_dir)
+        os.mkdir(train_dir)
     if not os.path.exists(valid_dir):
-        os.makedirs(valid_dir)
+        os.mkdir(valid_dir)
     
     sc = shape_context.ShapeContext()
 
@@ -194,62 +194,9 @@ def create_dataset( dim_num, train_size, valid_size, sample_num, standard=0.1, s
             angles = np.linspace(0, 2*np.pi, dim_num+1)[:-1]
             cos_sin = np.array( [ (np.cos(ang), (np.sin(ang))) for ang in angles ])
 
-            # data = np.zeros((data_num, dim_num))
-            # base_mean = np.random.uniform( 10, 100, size=(dim_num))
-            # if np.random.rand() >= 0.5:
-            #     # data = np.random.rand(data_num, dim_num)
-            #     for data_index in range(data_num):
-            #         for dim_index in range(dim_num):
-            #             mean = base_mean[dim_index]
-            #             while True:
-            #                 rand_data = np.random.normal( loc=mean, scale= standard * mean, size=(1) )
-            #                 if (rand_data > 0).all():
-            #                     break
-            #             data[ data_index , dim_index] = rand_data
-            # else:
-            # # if same class
-            #     for dim_index in range(dim_num):
-            #         mean = base_mean[dim_index]
-            #         while True:
-            #             rand_data = np.random.normal( loc=mean, scale= standard * mean, size=(data_num) )
-            #             if (rand_data > 0).all():
-            #                 break
-            #         data[:, dim_index] = rand_data
+            data = np.random.rand(data_num, dim_num)
             
-            large_data_num = 16
-            label_num = 2
-            if True:
-                sub_labels = np.zeros(large_data_num)
-                label_index = 0
-                label_step = int( np.floor(large_data_num / label_num) )
-                label_id = 0
 
-                while label_id < label_num:
-                    sub_labels[ label_index:label_index+label_step ] = label_id
-                    label_index += label_step
-                    label_id += 1
-                np.random.shuffle(sub_labels)
-                
-            sub_data = np.zeros((large_data_num, dim_num))
-            for i in range(label_num):
-
-                for label_index in range(label_num):
-                    # rand
-                    label_mask = (sub_labels == label_index)
-                    base_mean = np.random.uniform( 10, 100, size=(dim_num))
-
-                    for dim_index in range(dim_num):
-                        mean = base_mean[dim_index]
-                        while True:
-                            rand_data = np.random.normal( loc=mean, scale= standard * mean, size=(label_mask.sum()) )
-                            if (rand_data > 0).all():
-                                break
-                        sub_data[label_mask, dim_index] = rand_data
-
-            data_norm = np.linalg.norm( sub_data, axis=1 ).reshape(-1, 1).repeat(dim_num, 1)
-            data = sub_data / data_norm
-            data = data[:2]
-            
             shape1 = shape_context.get_shape([data[0,:]], sample_num=sample_num)
             shape2 = shape_context.get_shape([data[1,:]], sample_num=sample_num)
 

@@ -406,11 +406,11 @@ if __name__ == '__main__':
     
     parser.add_argument('--dim_num_min', default=16, type=int)
     parser.add_argument('--dim_num_max', default=16, type=int)
-    parser.add_argument('--dim_num_step', default=2, type=int)
+    parser.add_argument('--dim_num_step', default=1, type=int)
 
     parser.add_argument('--data_num_min', default=8, type=int)
     parser.add_argument('--data_num_max', default=8, type=int)
-    parser.add_argument('--data_num_step', default=4, type=int)
+    parser.add_argument('--data_num_step', default=1, type=int)
 
     parser.add_argument('--label_num_min', default=2, type=int)
     parser.add_argument('--label_num_max', default=2, type=int)

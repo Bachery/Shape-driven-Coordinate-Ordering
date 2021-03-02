@@ -26,7 +26,7 @@ end_dim = 32
 
 
 def load_result(net_type, dim_num):
-    valid_path = '../shape/curve/%dd-%s-S-note-valid-curve-10000/render/0' % (dim_num, net_type)
+    valid_path = '../shape/curve/%dd-%s-S-note-valid-curve/render/0' % (dim_num, net_type)
     score, gt = read_data(valid_path)
     return np.mean(score), np.mean(gt)
 
@@ -73,5 +73,5 @@ plt.xticks(xticks, xlabels)
 plt.xlabel('n', fontsize=fontsize)
 plt.ylabel('MSE', fontsize=fontsize)
 
-plt.savefig(os.path.abspath('./') + '/curve/curve_16n_.png', bbox_inches='tight' , dpi=400)
-plt.savefig(os.path.abspath('./') + '/curve/curve_16n_.pdf', bbox_inches='tight' , dpi=400)
+plt.savefig(os.path.abspath('./') + '/curve/curve_16n.png', bbox_inches='tight' , dpi=400)
+plt.savefig(os.path.abspath('./') + '/curve/curve_16n.pdf', bbox_inches='tight' , dpi=400)
