@@ -50,7 +50,7 @@ We provide a [script](./shape_task/scripts/curve.sh) to generate the curves of F
 cd shape_task
 ./scripts/curve.sh
 ```
-The generated figure will be saved in `./shape_task/compare/curve/`
+The generated figure will be saved in `./shape_task/compare/curve/`.
 For more details about the shape task, please refer to [README](./shape_task/README.md).
 
 ## File structure:
