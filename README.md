@@ -45,11 +45,12 @@ Notice that, training and testing procedures will generate data automaticly.
 ./scripts/generate.sh
 ```
 ### Shape Task
-We provide a script to generate the Fig.7 in our paper:
+We provide a [script](./shape_task/scripts/curve.sh) to generate the curves of Fig.7 in our paper:
 ```
 cd shape_task
 ./scripts/curve.sh
 ```
+The generated figure will be saved in `./shape_task/compare/curve/`
 For more details about the shape task, please refer to [README](./shape_task/README.md).
 
 ## File structure:
