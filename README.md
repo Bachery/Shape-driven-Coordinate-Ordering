@@ -14,6 +14,8 @@ We present a neural optimization model trained with reinforcement learning to so
 * Python 3.7
 * Pytorch 1.1.0
 * numpy
+* pandas
+* opencv_python
 * matplotlib
 * networkx
 * scipy
@@ -25,6 +27,10 @@ We present a neural optimization model trained with reinforcement learning to so
 ## Usage
 
 All codes are tested under PyTorch 1.1.0 and Python 3.7 on Ubuntu 18.04.
+### Installing dependencies
+```
+pip install -r requirements.txt
+```
 ### Training
 ```
 ./scripts/train.sh

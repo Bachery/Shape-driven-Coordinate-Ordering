@@ -1,0 +1,9 @@
+pandas==0.23.0
+networkx==2.1
+opencv_python==4.0.0.21
+tqdm==4.28.1
+matplotlib==2.2.2
+numpy==1.14.3
+scipy==1.1.0
+torch==1.1.0
+prettytable==2.0.0
