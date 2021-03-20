@@ -1,3 +1,5 @@
+# the code has been deprecated 
+
 import os
 import torch
 import torch.nn as nn
@@ -517,9 +519,9 @@ class NetPargnostics(object):
         self.net = PargNet(2, hidden_size, num_layers, dropout)
         # checkpoint = './parg_task/%s/200b-200-note-train-rel-10/checkpoints/99' % evaluate_type
         # checkpoint = './parg_task/%s/50b-200-note-train/checkpoints/299' % evaluate_type
-        checkpoint = '/newhome/juzhan/ws/Coor_Opt/parg_task/%s/50b-200-note-train/checkpoints/299' % evaluate_type
-        path = os.path.join(checkpoint, 'net.pt')
-        self.net.load_state_dict(torch.load(path))
+        # checkpoint = '/newhome/juzhan/ws/Coor_Opt/parg_task/%s/50b-200-note-train/checkpoints/299' % evaluate_type
+        # path = os.path.join(checkpoint, 'net.pt')
+        # self.net.load_state_dict(torch.load(path))
         
         self.bin_num = bin_num
         self.use_cuda = use_cuda
