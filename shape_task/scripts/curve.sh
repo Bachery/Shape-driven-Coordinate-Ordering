@@ -6,6 +6,7 @@
 
 
 mkdir -p data/rand
+mkdir compare/curve
 
 # run network to get test result
 python run_curve.py
