@@ -11,6 +11,7 @@ vis_valid/star/*
 vis_valid/radviz/*
 shape_task/shape/*
 !shape_task/shape/24d-fcn2
+!shape_task/shape/24d-fc
 
 # charts
 shape_task/compare/curve/*
