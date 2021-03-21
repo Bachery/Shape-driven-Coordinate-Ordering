@@ -48,6 +48,7 @@ Notice that, training and testing procedures will generate data automaticly.
 We provide a [script](./shape_task/scripts/curve.sh) to generate the curves of Fig.7 in our paper:
 ```
 cd shape_task
+mkdir -p data/rand
 ./scripts/curve.sh
 ```
 The generated figure will be saved in `./shape_task/compare/curve/`.
