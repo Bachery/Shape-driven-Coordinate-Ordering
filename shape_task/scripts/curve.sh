@@ -4,6 +4,9 @@
 # In this example code we set the testing size as 100, 
 # so the final curve maybe slightly different from our curve shown in paper.
 
+
+mkdir -p data/rand
+
 # run network to get test result
 python run_curve.py
 
