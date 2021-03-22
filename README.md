@@ -17,7 +17,6 @@ We present a neural optimization model trained with reinforcement learning to so
 * pandas
 * opencv_python
 * matplotlib
-* networkx
 * scipy
 * copy
 * tqdm
@@ -36,6 +35,7 @@ pip install -r requirements.txt
 ./scripts/train.sh
 ```
 ### Testing
+The warning and number of console output for testing scripts are meaningless, the final output will be saved under vis_valid/xxx/render folder, net-score.txt is the glyph score after network optimization.
 ```
 ./scripts/test.sh
 ```
