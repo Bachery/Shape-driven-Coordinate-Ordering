@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import multiprocessing
-from evaluate import shape_context, pargnostic, DBi
+from evaluate import shape_context, DBi
 
 
 # colors = [ 'black', 'hotpink', 'cornflowerblue', '#a0c8c0', '#dd9286', '#c0bed3', '#91aec6',  '#f5f4c2',   
@@ -23,12 +23,6 @@ class EvaluateTools(object):
         bin_num = 50
         # use_cuda = True
 
-        self.parg_c = pargnostic.NetPargnostics('cross', bin_num, 128, 1, 0.1, use_cuda)
-        self.parg_e = pargnostic.NetPargnostics('par_en', bin_num, 128, 1, 0.1, use_cuda)
-        self.parg_p = pargnostic.NetPargnostics('pccs', bin_num, 128, 1, 0.1, use_cuda)
-        self.parg_m = pargnostic.NetPargnostics('mut', bin_num, 128, 1, 0.1, use_cuda)
-        # self.parg_a = pargnostic.NetPargnostics('angle', bin_num, 128, 1, 0.1, use_cuda)
-        # self.parg_p = pargnostic.NetPargnostics('parallelism', bin_num, 128, 1, 0.1, use_cuda)
         self.nsc = shape_context.NetShapeContext(128, 1, 0.1, use_cuda)
     
         
@@ -73,14 +67,7 @@ class EvaluateTools(object):
             return [ sim, mer, sil ]
         elif reward_type == 'scd':
             return -1 * shape_context.shape_context_distance(data, labels, with_label, avg_type='simple', NSC=self.nsc, label_num=label_num)
-        elif reward_type == 'parg_cro':
-            return pargnostic.pargnostics(data, labels, with_label, reward_type='cross', NPG=self.parg_c, label_num=label_num)
-        elif reward_type == 'parg_enp':
-            return pargnostic.pargnostics(data, labels, with_label, reward_type='par_en', NPG=self.parg_e, label_num=label_num)
-        elif reward_type == 'parg_pcc':
-            return pargnostic.pargnostics(data, labels, with_label, reward_type='pccs', NPG=self.parg_p, label_num=label_num)
-        elif reward_type == 'parg_mut':
-            return pargnostic.pargnostics(data, labels, with_label, reward_type='mut', NPG=self.parg_p, label_num=label_num)
+
         elif reward_type == 'rad_dbi':
             return DBi.davies_bouldin_index(data, labels, 'dbi', label_num)
         elif reward_type == 'rad_dbr':
@@ -133,16 +120,7 @@ def evaluate(data, labels, order, vis_type, reward_type, with_label, nsc=None, l
         return shape_context.shape_context_distance(data, labels, with_label, NSC=nsc, label_num=label_num)
     elif reward_type == 'scd':
         return -1 * shape_context.shape_context_distance(data, labels, with_label, NSC=nsc, label_num=label_num)
-    elif reward_type == 'parg_cro':
-        return pargnostic.pargnostics(data, labels, with_label, reward_type='cross', label_num=label_num)
-    elif reward_type == 'parg_enp':
-        return pargnostic.pargnostics(data, labels, with_label, reward_type='par_en', label_num=label_num)
-    elif reward_type == 'parg_pcc':
-        return pargnostic.pargnostics(data, labels, with_label, reward_type='pccs', label_num=label_num)
-    elif reward_type == 'parg_mut':
-        return pargnostic.pargnostics(data, labels, with_label, reward_type='mut', label_num=label_num)
-    # elif reward_type == 'parg_all':
-    #     return pargnostic.pargnostics(data, labels, with_label, reward_type='all', label_num=label_num)
+
     elif reward_type == 'rad_dbi':
         return DBi.davies_bouldin_index(data, labels, 'dbi', label_num)
     elif reward_type == 'rad_dbr':
@@ -362,6 +340,7 @@ def draw_star(data, order, save_title, save_name, with_category=False, labels=No
 
     theta = np.linspace(0, 2*np.pi, len(dim), endpoint=False)    #将圆根据标签的个数等比分
     theta = np.concatenate((theta,[theta[0]]))  #闭合
+    dim.append("0")
     ax.set_thetagrids(theta*180/np.pi, dim, fontsize=30)         #替换标签
 
     # ylabels = [ '' ]

@@ -9,7 +9,6 @@ import matplotlib.patches as patches
 from collections import Counter
 from tqdm import tqdm
 import multiprocessing
-import networkx as nx
 import itertools
 from scipy import stats
 from scipy.integrate import trapz
