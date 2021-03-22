@@ -21,7 +21,7 @@ All codes are tested under PyTorch 1.1.0 and Python 3.7 on Ubuntu 18.04.
 ./scripts/train.sh
 ```
 ### Testing
-The warning and number of console output for testing scripts are meaningless, the final output will be saved under shape/xxx/render folder.
+The warning and number of console output for testing scripts are meaningless, the final output will be saved under `./shape/xxx/render` folder.
 ```
 ./scripts/test.sh
 ```
